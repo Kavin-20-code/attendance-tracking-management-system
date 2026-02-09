@@ -14,11 +14,16 @@ import {
 import { Link } from 'react-router-dom';
 
 const UserDashboard: React.FC = () => {
+<<<<<<< HEAD
   const { user: authUser } = useAuth();
   const { records, users } = useAttendance();
   
   // Use context-driven user data as source of truth for real-time updates (like leave balance changes)
   const user = users.find(u => u.id === authUser?.id) || authUser;
+=======
+  const { user } = useAuth();
+  const { records } = useAttendance();
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 
   const userRecords = records.filter(r => r.userId === user?.id);
   const presentDays = userRecords.filter(r => r.status === 'PRESENT' || r.status === 'LATE PRESENT').length;

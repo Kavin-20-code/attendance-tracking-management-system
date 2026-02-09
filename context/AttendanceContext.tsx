@@ -46,6 +46,10 @@ export const AttendanceProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   const [permissions, setPermissions] = useState<PermissionRequest[]>(() => storage.get(STORAGE_KEYS.PERMISSIONS, []));
   const [broadcasts, setBroadcasts] = useState<BroadcastMessage[]>(() => storage.get('ai_smart_broadcasts', []));
   
+<<<<<<< HEAD
+=======
+  // FIXED: Proper initialization for holidays to distinguish between "unset" and "empty list"
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   const [holidays, setHolidays] = useState<Holiday[]>(() => {
     const saved = localStorage.getItem('ai_smart_holidays');
     if (saved === null) return INITIAL_HOLIDAYS;
@@ -91,6 +95,7 @@ export const AttendanceProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   };
 
   const updateLeaveStatus = (id: string, status: 'APPROVED' | 'REJECTED') => {
+<<<<<<< HEAD
     setLeaves(prev => {
       const leaveIndex = prev.findIndex(l => l.id === id);
       if (leaveIndex === -1) return prev;
@@ -146,6 +151,13 @@ export const AttendanceProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
       return prev.map(p => p.id === id ? { ...p, status, updatedAt: new Date().toISOString() } : p);
     });
+=======
+    setLeaves(prev => prev.map(l => l.id === id ? { ...l, status } : l));
+  };
+
+  const updatePermissionStatus = (id: string, status: 'APPROVED' | 'REJECTED') => {
+    setPermissions(prev => prev.map(p => p.id === id ? { ...p, status } : p));
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   };
 
   const getRecordsByUser = (userId: string) => {

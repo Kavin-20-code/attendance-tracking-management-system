@@ -3,9 +3,12 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { AttendanceProvider } from './context/AttendanceContext';
+<<<<<<< HEAD
 import { NotificationProvider } from './context/NotificationContext';
 import { ToastContainer } from './components/Toast';
 import NotificationListener from './components/NotificationListener';
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 import Sidebar from './components/Sidebar';
 import Login from './pages/Login';
 import UserDashboard from './pages/UserDashboard';
@@ -26,10 +29,17 @@ const PrivateRoute: React.FC<{ children: React.ReactNode, adminOnly?: boolean }>
   if (adminOnly && user.role !== 'ADMIN') return <Navigate to="/" />;
   
   return (
+<<<<<<< HEAD
     <div className="flex bg-[#fcfdfe] min-h-screen relative overflow-hidden">
       <Sidebar />
       <main className="flex-1 w-full lg:ml-64 pt-20 lg:pt-8 p-4 sm:p-6 md:p-8 lg:p-10 overflow-x-hidden overflow-y-auto custom-scrollbar">
         <div className="max-w-[1400px] mx-auto w-full animate-page-entry">
+=======
+    <div className="flex bg-gray-50 min-h-screen relative">
+      <Sidebar />
+      <main className="flex-1 w-full lg:ml-64 pt-20 lg:pt-8 p-4 sm:p-6 md:p-8 lg:p-10 overflow-x-hidden">
+        <div className="max-w-[1400px] mx-auto w-full">
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
           {children}
         </div>
       </main>
@@ -42,6 +52,7 @@ const App: React.FC = () => {
     <Router>
       <AuthProvider>
         <AttendanceProvider>
+<<<<<<< HEAD
           <NotificationProvider>
             <NotificationListener />
             <ToastContainer />
@@ -105,6 +116,67 @@ const App: React.FC = () => {
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </NotificationProvider>
+=======
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            
+            {/* User Routes */}
+            <Route path="/" element={
+              <PrivateRoute>
+                <UserDashboard />
+              </PrivateRoute>
+            } />
+            <Route path="/history" element={
+              <PrivateRoute>
+                <AttendanceHistory />
+              </PrivateRoute>
+            } />
+            <Route path="/leaves" element={
+              <PrivateRoute>
+                <LeavesPermissions />
+              </PrivateRoute>
+            } />
+            <Route path="/holidays" element={
+              <PrivateRoute>
+                <Holidays />
+              </PrivateRoute>
+            } />
+            <Route path="/notifications" element={
+              <PrivateRoute>
+                <Notifications />
+              </PrivateRoute>
+            } />
+
+            {/* Admin Routes */}
+            <Route path="/admin" element={
+              <PrivateRoute adminOnly>
+                <AdminDashboard />
+              </PrivateRoute>
+            } />
+            <Route path="/admin/employees" element={
+              <PrivateRoute adminOnly>
+                <AdminEmployees />
+              </PrivateRoute>
+            } />
+            <Route path="/admin/reports" element={
+              <PrivateRoute adminOnly>
+                <AdminReports />
+              </PrivateRoute>
+            } />
+            <Route path="/admin/approvals" element={
+              <PrivateRoute adminOnly>
+                <AdminApprovals />
+              </PrivateRoute>
+            } />
+            <Route path="/admin/holidays" element={
+              <PrivateRoute adminOnly>
+                <AdminHolidays />
+              </PrivateRoute>
+            } />
+
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
         </AttendanceProvider>
       </AuthProvider>
     </Router>

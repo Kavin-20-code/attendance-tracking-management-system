@@ -1,8 +1,13 @@
 
 import React, { useState } from 'react';
 import { useAttendance } from '../context/AttendanceContext';
+<<<<<<< HEAD
 import { Mail, Phone, MoreHorizontal, UserPlus, X, Shield, User as UserIcon, Trash2, Clock } from 'lucide-react';
 import { User, Role, ShiftType } from '../types';
+=======
+import { Mail, Phone, MoreHorizontal, UserPlus, X, Shield, User as UserIcon, Trash2 } from 'lucide-react';
+import { User, Role } from '../types';
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 
 const AdminEmployees: React.FC = () => {
   const { users, addUser, removeUser } = useAttendance();
@@ -12,8 +17,12 @@ const AdminEmployees: React.FC = () => {
     username: '',
     password: '1234',
     department: 'Engineering',
+<<<<<<< HEAD
     role: 'USER' as Role,
     assignedShift: ShiftType.GENERAL
+=======
+    role: 'USER' as Role
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -25,13 +34,20 @@ const AdminEmployees: React.FC = () => {
       password: formData.password,
       department: formData.department,
       role: formData.role,
+<<<<<<< HEAD
       assignedShift: formData.assignedShift,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
       leaveBalance: { casual: 5, sick: 4 },
       permissionsUsed: 0
     };
     addUser(newUser);
     setShowModal(false);
+<<<<<<< HEAD
     setFormData({ name: '', username: '', password: '1234', department: 'Engineering', role: 'USER', assignedShift: ShiftType.GENERAL });
+=======
+    setFormData({ name: '', username: '', password: '1234', department: 'Engineering', role: 'USER' });
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   };
 
   return (
@@ -69,6 +85,7 @@ const AdminEmployees: React.FC = () => {
                   {user.name}
                   {user.role === 'ADMIN' && <Shield size={14} className="text-indigo-500" />}
                 </h3>
+<<<<<<< HEAD
                 <div className="flex items-center gap-2 mb-1">
                   <p className="text-sm font-bold text-blue-600 uppercase tracking-widest">{user.department}</p>
                   <span className="w-1 h-1 rounded-full bg-gray-300"></span>
@@ -76,6 +93,9 @@ const AdminEmployees: React.FC = () => {
                     {user.assignedShift.split(' ')[0]} SHIFT
                   </span>
                 </div>
+=======
+                <p className="text-sm font-bold text-blue-600 mb-1 uppercase tracking-widest">{user.department}</p>
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                 <p className="text-xs text-gray-400 mb-6 font-medium">ID: EMP-{user.id.slice(0, 4).toUpperCase()}</p>
                 
                 <div className="w-full grid grid-cols-2 gap-3 mb-6">
@@ -102,11 +122,19 @@ const AdminEmployees: React.FC = () => {
         ))}
       </div>
 
+<<<<<<< HEAD
       {/* Add Employee Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
           <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onClick={() => setShowModal(false)}></div>
           <div className="bg-white w-full max-w-lg rounded-[40px] shadow-2xl relative z-10 p-6 sm:p-10 animate-in zoom-in-95 duration-200 overflow-y-auto max-h-[90vh]">
+=======
+      {/* Add Employee Modal - Improved sizing for tablet */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+          <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm" onClick={() => setShowModal(false)}></div>
+          <div className="bg-white w-full max-w-lg rounded-[40px] shadow-2xl relative z-10 p-6 sm:p-10 animate-in zoom-in-95 duration-200">
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <div className="bg-blue-600 text-white p-3 rounded-2xl">
@@ -119,7 +147,11 @@ const AdminEmployees: React.FC = () => {
               </button>
             </div>
 
+<<<<<<< HEAD
             <form onSubmit={handleSubmit} className="space-y-5">
+=======
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
               <div>
                 <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Full Name</label>
                 <input 
@@ -144,7 +176,11 @@ const AdminEmployees: React.FC = () => {
                   <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Department</label>
                   <select 
                     value={formData.department} onChange={e => setFormData({...formData, department: e.target.value})}
+<<<<<<< HEAD
                     className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none focus:border-blue-500 font-black text-gray-700 text-sm appearance-none"
+=======
+                    className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none focus:border-blue-500 font-black text-gray-700 text-sm sm:text-base appearance-none"
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                   >
                     <option>Engineering</option>
                     <option>Product</option>
@@ -157,6 +193,7 @@ const AdminEmployees: React.FC = () => {
               </div>
 
               <div>
+<<<<<<< HEAD
                 <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Assign Shift</label>
                 <div className="grid grid-cols-2 gap-3">
                   {Object.values(ShiftType).filter(v => v !== ShiftType.OFF).map(shift => (
@@ -178,6 +215,8 @@ const AdminEmployees: React.FC = () => {
               </div>
 
               <div>
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                 <label className="block text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Role</label>
                 <div className="grid grid-cols-2 gap-4">
                   <button 

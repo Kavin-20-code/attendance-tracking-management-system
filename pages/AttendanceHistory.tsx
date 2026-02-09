@@ -17,6 +17,7 @@ const AttendanceHistory: React.FC = () => {
     .slice()
     .reverse();
 
+<<<<<<< HEAD
   const handleDownloadPersonalReport = () => {
     if (userRecords.length === 0) {
       alert("No records found for the selected month.");
@@ -45,6 +46,8 @@ const AttendanceHistory: React.FC = () => {
     document.body.removeChild(link);
   };
 
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -62,10 +65,14 @@ const AttendanceHistory: React.FC = () => {
               className="border-none outline-none font-bold text-gray-600 pr-4 bg-transparent cursor-pointer"
             />
           </div>
+<<<<<<< HEAD
           <button 
             onClick={handleDownloadPersonalReport}
             className="bg-gray-900 text-white p-4 rounded-2xl font-bold hover:bg-black transition-all shadow-lg shadow-gray-200 active:scale-95"
           >
+=======
+          <button className="bg-gray-900 text-white p-4 rounded-2xl font-bold hover:bg-black transition-all shadow-lg shadow-gray-200">
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
             <Download size={20} />
           </button>
         </div>

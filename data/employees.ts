@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 import { User, ShiftType } from '../types';
+=======
+import { User } from '../types';
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 
 export const DUMMY_USERS: User[] = [
   {
@@ -9,7 +13,10 @@ export const DUMMY_USERS: User[] = [
     role: 'USER',
     name: 'Kavin Kumar',
     department: 'Engineering',
+<<<<<<< HEAD
     assignedShift: ShiftType.GENERAL,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 5, sick: 4 },
     permissionsUsed: 0
   },
@@ -20,7 +27,10 @@ export const DUMMY_USERS: User[] = [
     role: 'USER',
     name: 'Arun Raj',
     department: 'Product',
+<<<<<<< HEAD
     assignedShift: ShiftType.A,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 5, sick: 4 },
     permissionsUsed: 1
   },
@@ -31,7 +41,10 @@ export const DUMMY_USERS: User[] = [
     role: 'USER',
     name: 'Meena Kumari',
     department: 'Design',
+<<<<<<< HEAD
     assignedShift: ShiftType.B,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 5, sick: 4 },
     permissionsUsed: 0
   },
@@ -42,7 +55,10 @@ export const DUMMY_USERS: User[] = [
     role: 'USER',
     name: 'Ravi Teja',
     department: 'Sales',
+<<<<<<< HEAD
     assignedShift: ShiftType.C,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 5, sick: 4 },
     permissionsUsed: 0
   },
@@ -53,7 +69,10 @@ export const DUMMY_USERS: User[] = [
     role: 'USER',
     name: 'Priya Sharma',
     department: 'HR',
+<<<<<<< HEAD
     assignedShift: ShiftType.GENERAL,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 5, sick: 4 },
     permissionsUsed: 0
   },
@@ -64,7 +83,10 @@ export const DUMMY_USERS: User[] = [
     role: 'ADMIN',
     name: 'Systems Administrator',
     department: 'IT',
+<<<<<<< HEAD
     assignedShift: ShiftType.GENERAL,
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
     leaveBalance: { casual: 99, sick: 99 },
     permissionsUsed: 0
   }

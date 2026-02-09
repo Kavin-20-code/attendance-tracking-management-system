@@ -22,6 +22,7 @@ const AdminReports: React.FC = () => {
   });
 
   const downloadReport = () => {
+<<<<<<< HEAD
     if (filteredRecords.length === 0) {
       alert("No records found to export.");
       return;
@@ -50,6 +51,20 @@ const AdminReports: React.FC = () => {
     a.download = `Filtered_Attendance_Report_${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
     window.URL.revokeObjectURL(url);
+=======
+    const headers = ['Date', 'Employee', 'Department', 'Check In', 'Check Out', 'Shift', 'Status'];
+    const rows = filteredRecords.map(r => {
+      const emp = users.find(u => u.id === r.userId);
+      return [r.date, emp?.name, emp?.department, r.checkIn, r.checkOut, r.shift, r.status].join(',');
+    });
+    const csv = [headers.join(','), ...rows].join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Attendance_Report_${new Date().toISOString().split('T')[0]}.csv`;
+    a.click();
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   };
 
   const selectedEmployee = selectedRecord ? users.find(u => u.id === selectedRecord.userId) : null;

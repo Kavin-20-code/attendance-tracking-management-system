@@ -16,7 +16,10 @@ export interface User {
   role: Role;
   name: string;
   department: string;
+<<<<<<< HEAD
   assignedShift: ShiftType;
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   leaveBalance: {
     casual: number;
     sick: number;
@@ -49,7 +52,10 @@ export interface LeaveRequest {
   endDate: string;
   reason: string;
   status: 'PENDING' | 'APPROVED' | 'REJECTED';
+<<<<<<< HEAD
   updatedAt?: string;
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 }
 
 export interface PermissionRequest {
@@ -60,7 +66,10 @@ export interface PermissionRequest {
   endTime: string;
   reason: string;
   status: 'PENDING' | 'APPROVED' | 'REJECTED';
+<<<<<<< HEAD
   updatedAt?: string;
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 }
 
 export interface BroadcastMessage {

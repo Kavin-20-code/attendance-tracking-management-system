@@ -8,8 +8,12 @@ import {
   TrendingUp,
   PieChart as PieChartIcon,
   Send,
+<<<<<<< HEAD
   BellRing,
   Download
+=======
+  BellRing
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 } from 'lucide-react';
 import { useAttendance } from '../context/AttendanceContext';
 import { useAuth } from '../context/AuthContext';
@@ -46,6 +50,7 @@ const AdminDashboard: React.FC = () => {
     { label: 'Total Late Marks', value: lateCheckins, icon: AlertCircle, color: 'text-red-600', bg: 'bg-red-50' },
   ];
 
+<<<<<<< HEAD
   const handleDownloadReport = () => {
     if (records.length === 0) {
       alert("No attendance records found to export.");
@@ -79,6 +84,8 @@ const AdminDashboard: React.FC = () => {
     document.body.removeChild(link);
   };
 
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   const handleBroadcast = (e: React.FormEvent) => {
     e.preventDefault();
     if (!broadcastForm.title || !broadcastForm.message) return;
@@ -120,10 +127,14 @@ const AdminDashboard: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">System Overview</h1>
           <p className="text-gray-500 font-medium">Real-time attendance analytics & monitoring.</p>
         </div>
+<<<<<<< HEAD
         <button 
           onClick={handleDownloadReport}
           className="bg-gray-900 text-white px-6 py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-black transition-all shadow-xl shadow-gray-200 active:scale-95"
         >
+=======
+        <button className="bg-gray-900 text-white px-6 py-3.5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-black transition-all shadow-xl shadow-gray-200">
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
           <TrendingUp size={18} />
           Generate Report
         </button>

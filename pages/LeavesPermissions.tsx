@@ -9,6 +9,7 @@ import {
   Plus,
   History,
   Info,
+<<<<<<< HEAD
   ChevronRight,
   Sticker,
   Activity
@@ -21,6 +22,15 @@ const LeavesPermissions: React.FC = () => {
   
   // Fetch real-time user data to pick up balance changes from context
   const user = users.find(u => u.id === authUser?.id) || authUser;
+=======
+  ChevronRight
+} from 'lucide-react';
+import { formatDisplayDate } from '../utils/shiftUtils';
+
+const LeavesPermissions: React.FC = () => {
+  const { user } = useAuth();
+  const { leaves, permissions, requestLeave, requestPermission } = useAttendance();
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
 
   const [leaveType, setLeaveType] = useState<'CASUAL' | 'SICK'>('CASUAL');
   const [leaveDates, setLeaveDates] = useState({ start: '', end: '', reason: '' });
@@ -30,8 +40,11 @@ const LeavesPermissions: React.FC = () => {
   const userLeaves = leaves.filter(l => l.userId === user?.id);
   const userPerms = permissions.filter(p => p.userId === user?.id);
 
+<<<<<<< HEAD
   const today = formatDate(new Date());
 
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
   const handleLeaveRequest = (e: React.FormEvent) => {
     e.preventDefault();
     requestLeave({
@@ -65,6 +78,7 @@ const LeavesPermissions: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+<<<<<<< HEAD
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-black text-gray-900 tracking-tight">Leaves & Permissions</h1>
@@ -105,6 +119,11 @@ const LeavesPermissions: React.FC = () => {
            </div>
            <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
         </div>
+=======
+      <div>
+        <h1 className="text-3xl font-black text-gray-900 tracking-tight">Leaves & Permissions</h1>
+        <p className="text-gray-500 font-medium">Manage your time off and short-duration absence requests.</p>
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -141,7 +160,10 @@ const LeavesPermissions: React.FC = () => {
                   <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Start Date</label>
                   <input 
                     type="date" required value={leaveDates.start}
+<<<<<<< HEAD
                     min={today}
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                     onChange={e => setLeaveDates({...leaveDates, start: e.target.value})}
                     className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none focus:border-blue-500 font-bold text-gray-700"
                   />
@@ -150,7 +172,10 @@ const LeavesPermissions: React.FC = () => {
                   <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2 px-1">End Date</label>
                   <input 
                     type="date" required value={leaveDates.end}
+<<<<<<< HEAD
                     min={leaveDates.start || today}
+=======
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                     onChange={e => setLeaveDates({...leaveDates, end: e.target.value})}
                     className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none focus:border-blue-500 font-bold text-gray-700"
                   />
@@ -231,6 +256,7 @@ const LeavesPermissions: React.FC = () => {
              <form onSubmit={handlePermRequest} className="space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
                 <div>
                   <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2 px-1">Permission Date</label>
+<<<<<<< HEAD
                   <input 
                     type="date" required 
                     value={permDetails.date} 
@@ -238,6 +264,9 @@ const LeavesPermissions: React.FC = () => {
                     onChange={e => setPermDetails({...permDetails, date: e.target.value})} 
                     className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none font-bold text-gray-700" 
                   />
+=======
+                  <input type="date" required value={permDetails.date} onChange={e => setPermDetails({...permDetails, date: e.target.value})} className="w-full bg-gray-50 border border-gray-200 px-6 py-4 rounded-2xl outline-none font-bold text-gray-700" />
+>>>>>>> da66adcd18e78518c81158028a20413fbe508c02
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                    <div>
