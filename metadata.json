@@ -1,0 +1,5 @@
+{
+  "name": "Attendance Tracking Management System",
+  "description": "A production-grade React-based attendance management system with automated shift detection, leave tracking, and advanced admin analytics.",
+  "requestFramePermissions": []
+}
